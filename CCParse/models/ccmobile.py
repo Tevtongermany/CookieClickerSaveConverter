@@ -76,7 +76,26 @@ class CCSaveMobileSettings:
 
 class CCSaveMobileBuildings:
     def __init__(self,data:dict) -> None:
-        self.cursor = Cursor(data=data.get("Cursor"))
+        self.cursor = Cursor(data.get("Cursor"))
+        self.grandma = Grandma(data.get("Grandma"))
+        self.farm = Farm(data.get("Farm"))
+        self.mine = Mine(data.get("Mine"))
+        self.factory = Factory(data.get("Factory"))
+        self.bank = Bank(data.get("Bank"))
+        self.temple = Temple(data.get("Temple"))
+        self.wizard_tower = WizardTower(data.get("Wizard tower"))
+        self.shipment = Shipment(data.get("Shipment"))
+        self.alchemy_lab = AlchemyLab(data.get("Alchemy lab"))
+        self.portal = Portal(data.get("Portal"))
+        self.time_machine = TimeMachine(data.get("Time machine"))
+        self.antimatter_condenser = AntimatterCondenser(data.get("Antimatter condenser"))
+        self.prism = Prism(data.get("Prism"))
+        self.chancemaker = Chancemaker(data.get("Chancemaker"))
+        self.fractal_engine = FractalEngine(data.get("Fractal engine"))
+        self.javascript_console = JavascriptConsole(data.get("Javascript console"))
+        self.idleverse = Idleverse(data.get("Idleverse"))
+        self.cortex_baker = CortexBaker(data.get("Cortex baker"))
+        self.you = You(data.get("You"))
         
         
 
@@ -94,6 +113,7 @@ class CCSaveMobile:
         self.totalcookies = data.get("cookiesTotal")
         self.handmadecookies = data.get("cookiesHandmade")
         self.cookieclicks = data.get("cookieClicks")
+        self.buildings = data.get("buildings")
 
     def _milliseconds_to_seconds(self, timestamp):
         if isinstance(timestamp, (int, float)) and timestamp > 1_000_000_000:
@@ -151,5 +171,8 @@ class CCSaveMobile:
         """Gets how much the player clicked the cookie"""
         return self.cookieclicks
 
+    @property
+    def get_buildings(self) -> CCSaveMobileBuildings:
+        return CCSaveMobileBuildings(data=self.buildings)
 
 
