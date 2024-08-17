@@ -96,9 +96,6 @@ class CCSaveMobileBuildings:
         self.idleverse = Idleverse(data.get("Idleverse"))
         self.cortex_baker = CortexBaker(data.get("Cortex baker"))
         self.you = You(data.get("You"))
-        
-        
-
 
 class CCSaveMobile:
     def __init__(self,data:dict) -> None:
@@ -114,6 +111,36 @@ class CCSaveMobile:
         self.handmadecookies = data.get("cookiesHandmade")
         self.cookieclicks = data.get("cookieClicks")
         self.buildings = data.get("buildings")
+        self.buildings = data.get("buildings")
+        self.gcClicks = data.get("gcClicks")
+        self.gcClicksTotal = data.get("gcClicksTotal")
+        self.gcMissed = data.get("gcMissed")
+        self.reindeerClicks = data.get("reindeerClicks")
+        self.reindeerClicksTotal = data.get("reindeerClicksTotal")
+        self.reindeerMissed = data.get("reindeerMissed")
+        self.elderWrath = data.get("elderWrath")
+        self.pledges = data.get("pledges")
+        self.pledgeT = data.get("pledgeT")
+        self.wrinklersPopped = data.get("wrinklersPopped")
+        self.cookiesSucked = data.get("cookiesSucked")
+        self.cookiesReset = data.get("cookiesReset")
+        self.heavenlyChips = data.get("heavenlyChips")
+        self.heavenlyChipsSpent = data.get("heavenlyChipsSpent")
+        self.resets = data.get("resets")
+        self.seasonT = data.get("seasonT")
+        self.seasonUses = data.get("seasonUses")
+        self.season = data.get("season")
+        self.santaLevel = data.get("santaLevel")
+        self.dragonLevel = data.get("dragonLevel")
+        self.dragonAura = data.get("dragonAura")
+        self.dragonAura2 = data.get("dragonAura2")
+        self.fortuneGC = data.get("fortuneGC")
+        self.fortuneCPS = data.get("fortuneCPS")
+        self.powerClicks = data.get("powerClicks")
+        self.powerClicksTotal = data.get("powerClicksTotal")
+        self.bgType = data.get("bgType")
+        self.milkType = data.get("milkType")
+        self.chimeType = data.get("chimeType")
 
     def _milliseconds_to_seconds(self, timestamp):
         if isinstance(timestamp, (int, float)) and timestamp > 1_000_000_000:
@@ -175,4 +202,122 @@ class CCSaveMobile:
     def get_buildings(self) -> CCSaveMobileBuildings:
         return CCSaveMobileBuildings(data=self.buildings)
 
+    @property
+    def get_cookies(self) -> float:
+        return self.currentcookies
 
+    @property
+    def get_gcClicks(self) -> int:
+        return self.gcClicks
+
+    @property
+    def get_gcClicksTotal(self) -> int:
+        return self.gcClicksTotal
+
+    @property
+    def get_gcMissed(self) -> int:
+        return self.gcMissed
+
+    @property
+    def get_reindeerClicks(self) -> int:
+        return self.reindeerClicks
+
+    @property
+    def get_reindeerClicksTotal(self) -> int:
+        return self.reindeerClicksTotal
+
+    @property
+    def get_reindeerMissed(self) -> int:
+        return self.reindeerMissed
+
+    @property
+    def get_elderWrath(self) -> int:
+        return self.elderWrath
+
+    @property
+    def get_pledges(self) -> int:
+        return self.pledges
+
+    @property
+    def get_pledgeT(self) -> int:
+        return self.pledgeT
+
+    @property
+    def get_wrinklersPopped(self) -> int:
+        return self.wrinklersPopped
+
+    @property
+    def get_cookiesSucked(self) -> float:
+        return self.cookiesSucked
+
+    @property
+    def get_cookiesReset(self) -> float:
+        return self.cookiesReset
+
+    @property
+    def get_heavenlyChips(self) -> int:
+        return self.heavenlyChips
+
+    @property
+    def get_heavenlyChipsSpent(self) -> int:
+        return self.heavenlyChipsSpent
+
+    @property
+    def get_resets(self) -> int:
+        return self.resets
+
+    @property
+    def get_seasonT(self) -> int:
+        return self.seasonT
+
+    @property
+    def get_seasonUses(self) -> int:
+        return self.seasonUses
+
+    @property
+    def get_season(self) -> str:
+        return self.season
+
+    @property
+    def get_santaLevel(self) -> int:
+        return self.santaLevel
+
+    @property
+    def get_dragonLevel(self) -> int:
+        return self.dragonLevel
+
+    @property
+    def get_dragonAura(self) -> int:
+        return self.dragonAura
+
+    @property
+    def get_dragonAura2(self) -> int:
+        return self.dragonAura2
+
+    @property
+    def get_fortuneGC(self) -> int:
+        return self.fortuneGC
+
+    @property
+    def get_fortuneCPS(self) -> int:
+        return self.fortuneCPS
+
+    @property
+    def get_powerClicks(self) -> int:
+        return self.powerClicks
+
+    @property
+    def get_powerClicksTotal(self) -> int:
+        return self.powerClicksTotal
+
+    @property
+    def get_bgType(self) -> int:
+        return self.bgType
+
+    @property
+    def get_milkType(self) -> int:
+        return self.milkType
+
+    @property
+    def get_chimeType(self) -> int:
+        return self.chimeType
