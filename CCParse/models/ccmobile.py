@@ -1,4 +1,5 @@
 import datetime
+from .ccmobilebuildings import *
 
 class CCSaveMobileSettings:
     def __init__(self,data:dict) -> None:
@@ -73,6 +74,13 @@ class CCSaveMobileSettings:
     def notScary(self):
         return self._notScary
 
+class CCSaveMobileBuildings:
+    def __init__(self,data:dict) -> None:
+        self.cursor = Cursor(data=data.get("Cursor"))
+        
+        
+
+
 class CCSaveMobile:
     def __init__(self,data:dict) -> None:
         self.raw = data
@@ -82,23 +90,29 @@ class CCSaveMobile:
         self.gamestarted = data.get("gameStart")
         self.seed = data.get("seed")
         self.currentcookies = data.get("cookies")
+        self.earnedcookies = data.get("cookiesEarned")
+        self.totalcookies = data.get("cookiesTotal")
+        self.handmadecookies = data.get("cookiesHandmade")
+        self.cookieclicks = data.get("cookieClicks")
 
     def _milliseconds_to_seconds(self, timestamp):
         if isinstance(timestamp, (int, float)) and timestamp > 1_000_000_000:
             return timestamp / 1000.0
         return timestamp
     
+
+    @property
+    def get_settings(self) -> CCSaveMobileSettings:
+        """Gets settings"""
+        return CCSaveMobileSettings(self.settings)
+    
+    # timestamps and all that stuff
     @property
     def get_time(self) -> datetime.datetime:
         """Gets the last time the player logged in"""
         time = self._milliseconds_to_seconds(self.time)
         return datetime.datetime.fromtimestamp(time)
     
-    @property
-    def get_settings(self) -> CCSaveMobileSettings:
-        """Gets settings"""
-        return CCSaveMobileSettings(self.settings)
-
     @property
     def get_run_started(self) -> datetime.datetime:
         """Gets the time when the run started"""
@@ -110,8 +124,32 @@ class CCSaveMobile:
         """Gets the time when the user started the game for the first time"""
         gameStartTime = self._milliseconds_to_seconds(self.gamestarted)
         return datetime.datetime.fromtimestamp(gameStartTime)
+    # ze seed
 
     @property
     def get_seed(self) -> str:
         return self.seed
     
+    # Cookies
+    @property
+    def get_cookies(self) -> float:
+        """Gets the current cookie amount that the player has"""
+        return self.currentcookies
+    
+    @property
+    def get_total_cookies(self) -> float:
+        """Gets all total backed cookies"""
+        return self.totalcookies
+    
+    @property
+    def get_earned_cookies(self) -> float:
+        """Tbh I have no idea what this is lol"""
+        return self.earnedcookies
+    
+    @property
+    def get_clicked_cookies(self) -> int:
+        """Gets how much the player clicked the cookie"""
+        return self.cookieclicks
+
+
+
