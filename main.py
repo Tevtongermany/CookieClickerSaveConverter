@@ -22,124 +22,126 @@ with open("CookieClickerSaveMobileExample.txt",mode="r") as file:
 
     """)
 
-    print(f"""
-    Cursor:
-        Bought: {decoded_save.get_buildings.cursor.bought}
-        Amount: {decoded_save.get_buildings.cursor.amount}
-        Amount Max: {decoded_save.get_buildings.cursor.amountMax}
-        Cookies Made: {decoded_save.get_buildings.cursor.cookiesmade}
 
-    Grandma:
-        Bought: {decoded_save.get_buildings.grandma.bought}
-        Amount: {decoded_save.get_buildings.grandma.amount}
-        Amount Max: {decoded_save.get_buildings.grandma.amountMax}
-        Cookies Made: {decoded_save.get_buildings.grandma.cookiesmade}
 
-    Farm:
-        Bought: {decoded_save.get_buildings.farm.bought}
-        Amount: {decoded_save.get_buildings.farm.amount}
-        Amount Max: {decoded_save.get_buildings.farm.amountMax}
-        Cookies Made: {decoded_save.get_buildings.farm.cookiesmade}
+    # print(f"""
+    # Cursor:
+    #     Bought: {decoded_save.get_buildings.cursor.bought}
+    #     Amount: {decoded_save.get_buildings.cursor.amount}
+    #     Amount Max: {decoded_save.get_buildings.cursor.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.cursor.cookiesmade}
 
-    Mine:
-        Bought: {decoded_save.get_buildings.mine.bought}
-        Amount: {decoded_save.get_buildings.mine.amount}
-        Amount Max: {decoded_save.get_buildings.mine.amountMax}
-        Cookies Made: {decoded_save.get_buildings.mine.cookiesmade}
+    # Grandma:
+    #     Bought: {decoded_save.get_buildings.grandma.bought}
+    #     Amount: {decoded_save.get_buildings.grandma.amount}
+    #     Amount Max: {decoded_save.get_buildings.grandma.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.grandma.cookiesmade}
 
-    Factory:
-        Bought: {decoded_save.get_buildings.factory.bought}
-        Amount: {decoded_save.get_buildings.factory.amount}
-        Amount Max: {decoded_save.get_buildings.factory.amountMax}
-        Cookies Made: {decoded_save.get_buildings.factory.cookiesmade}
+    # Farm:
+    #     Bought: {decoded_save.get_buildings.farm.bought}
+    #     Amount: {decoded_save.get_buildings.farm.amount}
+    #     Amount Max: {decoded_save.get_buildings.farm.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.farm.cookiesmade}
 
-    Bank:
-        Bought: {decoded_save.get_buildings.bank.bought}
-        Amount: {decoded_save.get_buildings.bank.amount}
-        Amount Max: {decoded_save.get_buildings.bank.amountMax}
-        Cookies Made: {decoded_save.get_buildings.bank.cookiesmade}
+    # Mine:
+    #     Bought: {decoded_save.get_buildings.mine.bought}
+    #     Amount: {decoded_save.get_buildings.mine.amount}
+    #     Amount Max: {decoded_save.get_buildings.mine.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.mine.cookiesmade}
 
-    Temple:
-        Bought: {decoded_save.get_buildings.temple.bought}
-        Amount: {decoded_save.get_buildings.temple.amount}
-        Amount Max: {decoded_save.get_buildings.temple.amountMax}
-        Cookies Made: {decoded_save.get_buildings.temple.cookiesmade}
+    # Factory:
+    #     Bought: {decoded_save.get_buildings.factory.bought}
+    #     Amount: {decoded_save.get_buildings.factory.amount}
+    #     Amount Max: {decoded_save.get_buildings.factory.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.factory.cookiesmade}
 
-    Wizard Tower:
-        Bought: {decoded_save.get_buildings.wizard_tower.bought}
-        Amount: {decoded_save.get_buildings.wizard_tower.amount}
-        Amount Max: {decoded_save.get_buildings.wizard_tower.amountMax}
-        Cookies Made: {decoded_save.get_buildings.wizard_tower.cookiesmade}
+    # Bank:
+    #     Bought: {decoded_save.get_buildings.bank.bought}
+    #     Amount: {decoded_save.get_buildings.bank.amount}
+    #     Amount Max: {decoded_save.get_buildings.bank.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.bank.cookiesmade}
 
-    Shipment:
-        Bought: {decoded_save.get_buildings.shipment.bought}
-        Amount: {decoded_save.get_buildings.shipment.amount}
-        Amount Max: {decoded_save.get_buildings.shipment.amountMax}
-        Cookies Made: {decoded_save.get_buildings.shipment.cookiesmade}
+    # Temple:
+    #     Bought: {decoded_save.get_buildings.temple.bought}
+    #     Amount: {decoded_save.get_buildings.temple.amount}
+    #     Amount Max: {decoded_save.get_buildings.temple.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.temple.cookiesmade}
 
-    Alchemy Lab:
-        Bought: {decoded_save.get_buildings.alchemy_lab.bought}
-        Amount: {decoded_save.get_buildings.alchemy_lab.amount}
-        Amount Max: {decoded_save.get_buildings.alchemy_lab.amountMax}
-        Cookies Made: {decoded_save.get_buildings.alchemy_lab.cookiesmade}
+    # Wizard Tower:
+    #     Bought: {decoded_save.get_buildings.wizard_tower.bought}
+    #     Amount: {decoded_save.get_buildings.wizard_tower.amount}
+    #     Amount Max: {decoded_save.get_buildings.wizard_tower.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.wizard_tower.cookiesmade}
 
-    Portal:
-        Bought: {decoded_save.get_buildings.portal.bought}
-        Amount: {decoded_save.get_buildings.portal.amount}
-        Amount Max: {decoded_save.get_buildings.portal.amountMax}
-        Cookies Made: {decoded_save.get_buildings.portal.cookiesmade}
+    # Shipment:
+    #     Bought: {decoded_save.get_buildings.shipment.bought}
+    #     Amount: {decoded_save.get_buildings.shipment.amount}
+    #     Amount Max: {decoded_save.get_buildings.shipment.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.shipment.cookiesmade}
 
-    Time Machine:
-        Bought: {decoded_save.get_buildings.time_machine.bought}
-        Amount: {decoded_save.get_buildings.time_machine.amount}
-        Amount Max: {decoded_save.get_buildings.time_machine.amountMax}
-        Cookies Made: {decoded_save.get_buildings.time_machine.cookiesmade}
+    # Alchemy Lab:
+    #     Bought: {decoded_save.get_buildings.alchemy_lab.bought}
+    #     Amount: {decoded_save.get_buildings.alchemy_lab.amount}
+    #     Amount Max: {decoded_save.get_buildings.alchemy_lab.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.alchemy_lab.cookiesmade}
 
-    Antimatter Condenser:
-        Bought: {decoded_save.get_buildings.antimatter_condenser.bought}
-        Amount: {decoded_save.get_buildings.antimatter_condenser.amount}
-        Amount Max: {decoded_save.get_buildings.antimatter_condenser.amountMax}
-        Cookies Made: {decoded_save.get_buildings.antimatter_condenser.cookiesmade}
+    # Portal:
+    #     Bought: {decoded_save.get_buildings.portal.bought}
+    #     Amount: {decoded_save.get_buildings.portal.amount}
+    #     Amount Max: {decoded_save.get_buildings.portal.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.portal.cookiesmade}
 
-    Prism:
-        Bought: {decoded_save.get_buildings.prism.bought}
-        Amount: {decoded_save.get_buildings.prism.amount}
-        Amount Max: {decoded_save.get_buildings.prism.amountMax}
-        Cookies Made: {decoded_save.get_buildings.prism.cookiesmade}
+    # Time Machine:
+    #     Bought: {decoded_save.get_buildings.time_machine.bought}
+    #     Amount: {decoded_save.get_buildings.time_machine.amount}
+    #     Amount Max: {decoded_save.get_buildings.time_machine.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.time_machine.cookiesmade}
 
-    Chancemaker:
-        Bought: {decoded_save.get_buildings.chancemaker.bought}
-        Amount: {decoded_save.get_buildings.chancemaker.amount}
-        Amount Max: {decoded_save.get_buildings.chancemaker.amountMax}
-        Cookies Made: {decoded_save.get_buildings.chancemaker.cookiesmade}
+    # Antimatter Condenser:
+    #     Bought: {decoded_save.get_buildings.antimatter_condenser.bought}
+    #     Amount: {decoded_save.get_buildings.antimatter_condenser.amount}
+    #     Amount Max: {decoded_save.get_buildings.antimatter_condenser.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.antimatter_condenser.cookiesmade}
 
-    Fractal Engine:
-        Bought: {decoded_save.get_buildings.fractal_engine.bought}
-        Amount: {decoded_save.get_buildings.fractal_engine.amount}
-        Amount Max: {decoded_save.get_buildings.fractal_engine.amountMax}
-        Cookies Made: {decoded_save.get_buildings.fractal_engine.cookiesmade}
+    # Prism:
+    #     Bought: {decoded_save.get_buildings.prism.bought}
+    #     Amount: {decoded_save.get_buildings.prism.amount}
+    #     Amount Max: {decoded_save.get_buildings.prism.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.prism.cookiesmade}
 
-    JavaScript Console:
-        Bought: {decoded_save.get_buildings.javascript_console.bought}
-        Amount: {decoded_save.get_buildings.javascript_console.amount}
-        Amount Max: {decoded_save.get_buildings.javascript_console.amountMax}
-        Cookies Made: {decoded_save.get_buildings.javascript_console.cookiesmade}
+    # Chancemaker:
+    #     Bought: {decoded_save.get_buildings.chancemaker.bought}
+    #     Amount: {decoded_save.get_buildings.chancemaker.amount}
+    #     Amount Max: {decoded_save.get_buildings.chancemaker.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.chancemaker.cookiesmade}
 
-    Idleverse:
-        Bought: {decoded_save.get_buildings.idleverse.bought}
-        Amount: {decoded_save.get_buildings.idleverse.amount}
-        Amount Max: {decoded_save.get_buildings.idleverse.amountMax}
-        Cookies Made: {decoded_save.get_buildings.idleverse.cookiesmade}
+    # Fractal Engine:
+    #     Bought: {decoded_save.get_buildings.fractal_engine.bought}
+    #     Amount: {decoded_save.get_buildings.fractal_engine.amount}
+    #     Amount Max: {decoded_save.get_buildings.fractal_engine.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.fractal_engine.cookiesmade}
 
-    Cortex Baker:
-        Bought: {decoded_save.get_buildings.cortex_baker.bought}
-        Amount: {decoded_save.get_buildings.cortex_baker.amount}
-        Amount Max: {decoded_save.get_buildings.cortex_baker.amountMax}
-        Cookies Made: {decoded_save.get_buildings.cortex_baker.cookiesmade}
+    # JavaScript Console:
+    #     Bought: {decoded_save.get_buildings.javascript_console.bought}
+    #     Amount: {decoded_save.get_buildings.javascript_console.amount}
+    #     Amount Max: {decoded_save.get_buildings.javascript_console.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.javascript_console.cookiesmade}
 
-    You:
-        Bought: {decoded_save.get_buildings.you.bought}
-        Amount: {decoded_save.get_buildings.you.amount}
-        Amount Max: {decoded_save.get_buildings.you.amountMax}
-        Cookies Made: {decoded_save.get_buildings.you.cookiesmade}
-    """)
+    # Idleverse:
+    #     Bought: {decoded_save.get_buildings.idleverse.bought}
+    #     Amount: {decoded_save.get_buildings.idleverse.amount}
+    #     Amount Max: {decoded_save.get_buildings.idleverse.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.idleverse.cookiesmade}
+
+    # Cortex Baker:
+    #     Bought: {decoded_save.get_buildings.cortex_baker.bought}
+    #     Amount: {decoded_save.get_buildings.cortex_baker.amount}
+    #     Amount Max: {decoded_save.get_buildings.cortex_baker.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.cortex_baker.cookiesmade}
+
+    # You:
+    #     Bought: {decoded_save.get_buildings.you.bought}
+    #     Amount: {decoded_save.get_buildings.you.amount}
+    #     Amount Max: {decoded_save.get_buildings.you.amountMax}
+    #     Cookies Made: {decoded_save.get_buildings.you.cookiesmade}
+    # """)
