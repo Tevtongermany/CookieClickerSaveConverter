@@ -108,6 +108,7 @@ class CCSaveMobileAchivements:
     def __init__(self,achive,achivement:AchivementsUnlock) -> None:
         self.achive = achive
         self.Achivement= achivement
+        
 class CCSaveMobile:
     def __init__(self,data:dict) -> None:
         self.raw = data

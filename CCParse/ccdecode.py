@@ -15,7 +15,18 @@ class CCDecode:
         if type is Enums.SaveType.PC:
             data = data.replace("%3D%21END%21","")
             decoded_save = base64.b64decode(data)
-            return "not implemented yet!"
+            decoded_save = decoded_save.decode("utf-8")
+            sections = decoded_save.split('|')
+            parsed_data = []
+
+            for section in sections:
+                if ';' in section:
+                    parts = [subpart.split(',') if ',' in subpart else subpart for subpart in section.split(';')]
+                else:
+                    parts = section
+                
+                parsed_data.append(parts)
+            return parsed_data
         if type is Enums.SaveType.MOBILE:
             decoded_save = base64.b64decode(data)
             decoded_save = decoded_save.decode("utf-8")
