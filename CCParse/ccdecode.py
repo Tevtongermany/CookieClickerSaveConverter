@@ -2,15 +2,16 @@ import base64
 import binascii
 import re
 from . import Enums
-from .models import ccmobile
+from .models import ccmobile , ccpc
 import base64
 import ast
+from typing import Union
 
 class CCDecode:
     def __init__(self):
         ...
 
-    def decode(self, data: str, type: Enums.SaveType):
+    def decode(self, data: str, type: Enums.SaveType) -> Union[ccmobile.CCSaveMobile, ccpc.CCSavePC]:
         if type is Enums.SaveType.AUTODETECT:
             type = self.detectsavetype(data=data)
         try:
@@ -36,7 +37,7 @@ class CCDecode:
                         parts = section
                     
                     parsed_data.append(parts)
-                return parsed_data
+                return ccpc.CCSavePC(data=parsed_data)
 
             elif type is Enums.SaveType.MOBILE:
                 decoded_save = base64.b64decode(data)
