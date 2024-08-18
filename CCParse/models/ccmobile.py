@@ -100,17 +100,21 @@ class CCSaveMobileBuildings:
 class CCSaveMobile:
     def __init__(self,data:dict) -> None:
         self.raw = data
-        self.time = data.get("time")
         self.settings = data.get("settings")
+        # Time and stuff
+        self.time = data.get("time")
         self.runstarted = data.get("runStart")
         self.gamestarted = data.get("gameStart")
         self.seed = data.get("seed")
+        # cookies
         self.currentcookies = data.get("cookies")
         self.earnedcookies = data.get("cookiesEarned")
         self.totalcookies = data.get("cookiesTotal")
         self.handmadecookies = data.get("cookiesHandmade")
         self.cookieclicks = data.get("cookieClicks")
+        # builds
         self.buildings = data.get("buildings")
+        # idk
         self.gcClicks = data.get("gcClicks")
         self.gcClicksTotal = data.get("gcClicksTotal")
         self.gcMissed = data.get("gcMissed")
@@ -140,12 +144,19 @@ class CCSaveMobile:
         self.bgType = data.get("bgType")
         self.milkType = data.get("milkType")
         self.chimeType = data.get("chimeType")
+        
+        self.tippedN = data.get("tippedN")
+        self.researchT = data.get("researchT")
+        self.researchTM = data.get("researchTM")
+        self.researchUpgrade = data.get("researchUpgrade")
+        self.researchUpgradeLast = data.get("researchUpgradeLast")
 
     def _milliseconds_to_seconds(self, timestamp):
         if isinstance(timestamp, (int, float)) and timestamp > 1_000_000_000:
             return timestamp / 1000.0
         return timestamp
     
+
 
     @property
     def get_settings(self) -> CCSaveMobileSettings:
@@ -178,27 +189,27 @@ class CCSaveMobile:
     
     # Cookies
     @property
-    def get_cookies(self) -> float:
+    def get_Cookies(self) -> float:
         """Gets the current cookie amount that the player has"""
         return self.currentcookies
     
     @property
-    def get_total_cookies(self) -> float:
+    def get_Total_Cookies(self) -> float:
         """Gets all total backed cookies"""
         return self.totalcookies
     
     @property
-    def get_earned_cookies(self) -> float:
+    def get_Earned_Cookies(self) -> float:
         """Tbh I have no idea what this is lol"""
         return self.earnedcookies
     
     @property
-    def get_clicked_cookies(self) -> int:
+    def get_Clicked_Cookies(self) -> int:
         """Gets how much the player clicked the cookie"""
         return self.cookieclicks
 
     @property
-    def get_buildings(self) -> CCSaveMobileBuildings:
+    def get_Buildings(self) -> CCSaveMobileBuildings:
         return CCSaveMobileBuildings(data=self.buildings)
 
     @property
@@ -320,8 +331,44 @@ class CCSaveMobile:
     @property
     def get_chimeType(self) -> int:
         return self.chimeType
-    # Time stuff
 
+    @property
+    def get_currentcookies(self) -> float:
+        return self.currentcookies
+    
+    @property
+    def get_earnedcookies(self) -> float:
+        return self.earnedcookies
+
+    @property
+    def get_totalcookies(self) -> float:
+        return self.totalcookies
+
+    @property
+    def get_handmadecookies(self) -> float:
+        return self.handmadecookies
+
+    @property
+    def get_tippedN(self) -> float:
+        return self.tippedN
+
+    @property
+    def get_researchT(self) -> float:
+        return self.researchT
+
+    @property
+    def get_researchTM(self) -> float:
+        return self.researchTM
+
+    @property
+    def get_researchUpgrade(self) -> float:
+        return self.researchUpgrade
+
+    @property
+    def get_researchUpgradeLast(self) -> float:
+        return self.researchUpgradeLast
+
+    # Time stuff
     def set_time(self,value:datetime.datetime) -> None:
         # Why does Cookie Clicker use Milisec 😭🙏
         milisec_unix = value.timestamp() * 1000
@@ -334,7 +381,7 @@ class CCSaveMobile:
     def set_run_started(self,value:datetime.datetime) -> None:
         milisec_unix = value.timestamp() * 1000
         self.runstarted = milisec_unix
-        
+
     # Cookies
     def set_cookies(self, value: float) -> None:
         self.currentcookies = value
@@ -459,3 +506,30 @@ class CCSaveMobile:
 
     def set_chimeType(self, value: int) -> None:
         self.chimeType = value
+
+    def set_currentcookies(self, value: float) -> None:
+        self.currentcookies = value
+
+    def set_earnedcookies(self, value: float) -> None:
+        self.earnedcookies = value
+
+    def set_totalcookies(self, value: float) -> None:
+        self.totalcookies = value
+
+    def set_handmadecookies(self, value: float) -> None:
+        self.handmadecookies = value
+
+    def set_tippedN(self, value: float) -> None:
+        self.tippedN = value
+
+    def set_researchT(self, value: float) -> None:
+        self.researchT = value
+
+    def set_researchTM(self, value: float) -> None:
+        self.researchTM = value
+
+    def set_researchUpgrade(self, value: float) -> None:
+        self.researchUpgrade = value
+
+    def set_researchUpgradeLast(self, value: float) -> None:
+        self.researchUpgradeLast = value
