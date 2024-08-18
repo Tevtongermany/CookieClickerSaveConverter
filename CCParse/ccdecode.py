@@ -14,15 +14,15 @@ class CCDecode:
         if type is Enums.SaveType.AUTODETECT:
             type = self.detectsavetype(data=data)
         try:
-            data = data.encode('ascii', 'ignore').decode('ascii')
-            data = data.strip()
-
-
-            missing_padding = len(data) % 4
-            if missing_padding != 0:
-                data += '=' * (4 - missing_padding)
 
             if type is Enums.SaveType.PC:
+                missing_padding = len(data) % 4
+                if missing_padding != 0:
+                    data += '=' * (4 - missing_padding)
+
+                data = data[:-9]
+                data = data.encode('ascii', 'ignore').decode('ascii')
+                data = data.strip()
                 data = data.replace("%3D%21END%21", "")
                 decoded_save = base64.b64decode(data)
                 decoded_save = decoded_save.decode("utf-8")
@@ -53,4 +53,5 @@ class CCDecode:
             return Enums.SaveType.PC
         else:
             return Enums.SaveType.MOBILE
+
         
