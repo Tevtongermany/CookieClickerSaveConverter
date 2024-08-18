@@ -1,5 +1,7 @@
 import datetime
+from typing import List
 from .ccmobilebuildings import *
+from ..Enums import UpgradeAvailability
 
 class CCSaveMobileSettings:
     def __init__(self,data:dict) -> None:
@@ -97,6 +99,11 @@ class CCSaveMobileBuildings:
         self.cortex_baker = CortexBaker(data.get("Cortex baker"))
         self.you = You(data.get("You"))
 
+class CCSaveMobileUpgrades:
+    def __init__(self,upgrade,Availability:UpgradeAvailability) -> None:
+        self.upgradeName = upgrade
+        self.Availability = Availability
+
 class CCSaveMobile:
     def __init__(self,data:dict) -> None:
         self.raw = data
@@ -113,7 +120,7 @@ class CCSaveMobile:
         self.handmadecookies = data.get("cookiesHandmade")
         self.cookieclicks = data.get("cookieClicks")
         # builds
-        self.buildings = data.get("buildings")
+        self.buildings:dict = data.get("buildings")
         # idk
         self.gcClicks = data.get("gcClicks")
         self.gcClicksTotal = data.get("gcClicksTotal")
@@ -150,6 +157,8 @@ class CCSaveMobile:
         self.researchTM = data.get("researchTM")
         self.researchUpgrade = data.get("researchUpgrade")
         self.researchUpgradeLast = data.get("researchUpgradeLast")
+
+        self.upgrades: dict = data.get("upgrades")
 
     def _milliseconds_to_seconds(self, timestamp):
         if isinstance(timestamp, (int, float)) and timestamp > 1_000_000_000:
@@ -367,7 +376,19 @@ class CCSaveMobile:
     @property
     def get_researchUpgradeLast(self) -> float:
         return self.researchUpgradeLast
-
+    
+    @property
+    def get_upgrades(self) -> List[CCSaveMobileUpgrades]:
+        upgrades: List[CCSaveMobileUpgrades] = []
+        for upgrade_key, availabile in self.upgrades.items():
+            try:
+                upgrade = int(upgrade_key)
+                availability_enum = UpgradeAvailability(availabile)
+            except:
+                availability_enum = UpgradeAvailability.NOTAVAILABLE
+            upgrades.append(CCSaveMobileUpgrades(upgrade=upgrade, Availability=availability_enum))
+        return upgrades
+    
     # Time stuff
     def set_time(self,value:datetime.datetime) -> None:
         # Why does Cookie Clicker use Milisec 😭🙏

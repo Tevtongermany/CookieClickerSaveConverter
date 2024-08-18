@@ -1,4 +1,4 @@
-from .ccbase import CCBaseBuildingMobile
+from ..ccbase import CCBaseBuildingMobile
 
 # Killing myself
 

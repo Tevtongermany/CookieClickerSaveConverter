@@ -16,13 +16,14 @@ with open("CookieClickerSaveMobileExample.txt",mode="r") as file:
     """)
     print(f"""
     Current Cookies: {decoded_save.get_cookies}
-    Clicked Cookies: {decoded_save.get_clicked_cookies}
-    Earned Cookies: {decoded_save.get_earned_cookies}
-    Total Cookies: {decoded_save.get_total_cookies}
+    Clicked Cookies: {decoded_save.get_Clicked_Cookies}
+    Earned Cookies: {decoded_save.get_Earned_Cookies}
+    Total Cookies: {decoded_save.get_Total_Cookies}
 
     """)
 
-
+    for upgrade in decoded_save.get_upgrades:
+        print(upgrade.Availability)
 
     # print(f"""
     # Cursor:

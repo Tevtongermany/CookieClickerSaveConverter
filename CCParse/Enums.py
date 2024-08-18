@@ -7,6 +7,6 @@ class SaveType(Enum):
     AUTODETECT = auto()
 
 class UpgradeAvailability(Enum):
-    NOTAVAILABLE = auto()
-    AVAILABLE = auto()
-    BOUGHT = auto()
+    NOTAVAILABLE = 0
+    AVAILABLE = 2
+    BOUGHT = 3
