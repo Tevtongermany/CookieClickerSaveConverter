@@ -321,3 +321,124 @@ class CCSaveMobile:
     @property
     def get_chimeType(self) -> int:
         return self.chimeType
+    
+    @property
+    def set_cookies(self, value: float) -> None:
+        self.currentcookies = value
+
+    @property
+    def set_gcClicks(self, value: int) -> None:
+        self.gcClicks = value
+
+    @property
+    def set_gcClicksTotal(self, value: int) -> None:
+        self.gcClicksTotal = value
+
+    @property
+    def set_gcMissed(self, value: int) -> None:
+        self.gcMissed = value
+
+    @property
+    def set_reindeerClicks(self, value: int) -> None:
+        self.reindeerClicks = value
+
+    @property
+    def set_reindeerClicksTotal(self, value: int) -> None:
+        self.reindeerClicksTotal = value
+
+    @property
+    def set_reindeerMissed(self, value: int) -> None:
+        self.reindeerMissed = value
+
+    @property
+    def set_elderWrath(self, value: int) -> None:
+        self.elderWrath = value
+
+    @property
+    def set_pledges(self, value: int) -> None:
+        self.pledges = value
+
+    @property
+    def set_pledgeT(self, value: int) -> None:
+        self.pledgeT = value
+
+    @property
+    def set_wrinklersPopped(self, value: int) -> None:
+        self.wrinklersPopped = value
+
+    @property
+    def set_cookiesSucked(self, value: float) -> None:
+        self.cookiesSucked = value
+
+    @property
+    def set_cookiesReset(self, value: float) -> None:
+        self.cookiesReset = value
+
+    @property
+    def set_heavenlyChips(self, value: int) -> None:
+        self.heavenlyChips = value
+
+    @property
+    def set_heavenlyChipsSpent(self, value: int) -> None:
+        self.heavenlyChipsSpent = value
+
+    @property
+    def set_resets(self, value: int) -> None:
+        self.resets = value
+
+    @property
+    def set_seasonT(self, value: int) -> None:
+        self.seasonT = value
+
+    @property
+    def set_seasonUses(self, value: int) -> None:
+        self.seasonUses = value
+
+    @property
+    def set_season(self, value: str) -> None:
+        self.season = value
+
+    @property
+    def set_santaLevel(self, value: int) -> None:
+        self.santaLevel = value
+
+    @property
+    def set_dragonLevel(self, value: int) -> None:
+        self.dragonLevel = value
+
+    @property
+    def set_dragonAura(self, value: int) -> None:
+        self.dragonAura = value
+
+
+    @property
+    def set_dragonAura2(self, value: int) -> None:
+        self.dragonAura2 = value
+
+    @property
+    def set_fortuneGC(self, value: int) -> None:
+        self.fortuneGC = value
+
+    @property
+    def set_fortuneCPS(self, value: int) -> None:
+        self.fortuneCPS = value
+
+    @property
+    def set_powerClicks(self, value: int) -> None:
+        self.powerClicks = value
+
+    @property
+    def set_powerClicksTotal(self, value: int) -> None:
+        self.powerClicksTotal = value
+
+    @property
+    def set_bgType(self, value: int) -> None:
+        self.bgType = value
+
+    @property
+    def set_milkType(self, value: int) -> None:
+        self.milkType = value
+
+    @property
+    def set_chimeType(self, value: int) -> None:
+        self.chimeType = value
