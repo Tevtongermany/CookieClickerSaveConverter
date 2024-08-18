@@ -5,7 +5,7 @@ decoder = CCDecode()
 
 
 with open("CookieClickerSaveMobileExample.txt",mode="r") as file:
-    
+    pass
     decoded_save = decoder.decode(file.read(),type=SaveType.AUTODETECT)
     print(f"""
 
@@ -156,4 +156,5 @@ with open("CookieClickerSaveMobileExample.txt",mode="r") as file:
 
 with open("GexBakery.txt",mode="r") as file:
     decoded_save = decoder.decode(file.read(),type=SaveType.AUTODETECT)
-    decoded_save
+    if isinstance(decoded_save,list):
+        print(decoded_save)
