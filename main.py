@@ -25,6 +25,10 @@ with open("CookieClickerSaveMobileExample.txt",mode="r") as file:
     for upgrade in decoded_save.get_upgrades:
         print(upgrade.Availability)
 
+    for achivement in decoded_save.get_achievements:
+        print(achivement.Achivement)
+
+        
     # print(f"""
     # Cursor:
     #     Bought: {decoded_save.get_buildings.cursor.bought}

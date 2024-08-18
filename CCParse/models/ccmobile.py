@@ -1,7 +1,7 @@
 import datetime
 from typing import List
 from .ccmobilebuildings import *
-from ..Enums import UpgradeAvailability
+from ..Enums import UpgradeAvailability,AchivementsUnlock
 
 class CCSaveMobileSettings:
     def __init__(self,data:dict) -> None:
@@ -104,6 +104,10 @@ class CCSaveMobileUpgrades:
         self.upgradeName = upgrade
         self.Availability = Availability
 
+class CCSaveMobileAchivements:
+    def __init__(self,achive,achivement:AchivementsUnlock) -> None:
+        self.achive = achive
+        self.Achivement= achivement
 class CCSaveMobile:
     def __init__(self,data:dict) -> None:
         self.raw = data
@@ -159,6 +163,7 @@ class CCSaveMobile:
         self.researchUpgradeLast = data.get("researchUpgradeLast")
 
         self.upgrades: dict = data.get("upgrades")
+        self.achievs: dict = data.get("achievs")
 
     def _milliseconds_to_seconds(self, timestamp):
         if isinstance(timestamp, (int, float)) and timestamp > 1_000_000_000:
@@ -388,6 +393,18 @@ class CCSaveMobile:
                 availability_enum = UpgradeAvailability.NOTAVAILABLE
             upgrades.append(CCSaveMobileUpgrades(upgrade=upgrade, Availability=availability_enum))
         return upgrades
+    
+    @property
+    def get_achievements(self) -> List[CCSaveMobileAchivements]:
+        achivements: List[CCSaveMobileAchivements] = []
+        for achievs_key, achivement in self.achievs.items():
+            try:
+                achive = int(achievs_key)
+                achivement_enum = AchivementsUnlock(achivement)
+            except:
+                achivement_enum = AchivementsUnlock.LOCKED
+            achivements.append(CCSaveMobileAchivements(achive=achive, achivement=achivement_enum))
+        return achivements
     
     # Time stuff
     def set_time(self,value:datetime.datetime) -> None:
