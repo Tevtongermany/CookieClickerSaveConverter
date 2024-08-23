@@ -6,6 +6,7 @@ how to install
 ```
 pip install git+https://github.com/username/repository.git
 ```
+![example](https://github.com/Tevtongermany/CookieClickerSaveParser/blob/main/assets/image.png?raw=true)
 
 Usage:
 ```py
