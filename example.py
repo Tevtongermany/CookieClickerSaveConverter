@@ -26,13 +26,7 @@ def Parse_Mobile_Save():
 
         """)
 
-        for upgrade in decoded_save.get_upgrades:
-            print(f"{upgrade.upgradeName}: {upgrade.Availability}")
 
-        print("")
-
-        for achivement in decoded_save.get_achievements:
-            print(f"""{achivement.achive}: {achivement.Achivement}""")
 
         print("")
 
@@ -166,6 +160,7 @@ def Parse_PC_Save():
         print(decoded_save.cookies)
         print(decoded_save.cookiesEarned)
         print(decoded_save.cookiesSuckedByWrinklers)
+        print(decoded_save.bakeryName)
         
-Parse_Mobile_Save()
+
 Parse_PC_Save()
